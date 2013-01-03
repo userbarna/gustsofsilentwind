@@ -1,27 +1,12 @@
 {
   "name": "GOSW",
-  "version": "0.0.0",
-  "description": "Gusts of Silent Wind Website",
-  "main": "server.js",
-  "scripts": {
-    "test": "make test",
-    "start": "node server.js"
-  },
-  "repository": "",
-  "keywords": [
-    "music",
-    "website",
-    "ambient"
-  ],
+  "version": "0.0.1",
   "dependencies": {
-    "express": "*",
-    "hbs": "*",
-    "slug": "*"
+    "express": "2.5.x",
+    "hbs": "*"
   },
   "engines": {
     "node": "0.8.x",
     "npm": "1.1.x"
   }
-  "author": "JDGP",
-  "license": "BSD"
 }
