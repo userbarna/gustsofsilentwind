@@ -1,9 +1,8 @@
 var express = require('express'),
-    port = process.env.PORT || 3000,
+    port = process.env.PORT || 80,
     app = express(),
     hbs = require('hbs'),
-    fs = require('fs'),
-    slug = require ('slug');
+    fs = require('fs');
 
 app.configure(function(){
     app.set('views',__dirname + '/app/views');
