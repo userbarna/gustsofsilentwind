@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <title>{{ title }}</title>
+        <!-- Meta-->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="Keywords" content="Ambient, Soundtrack, Music, Album, Songs, Fragments, Silent Wind">
+        <meta name="Description" content="Website for the new Musical Project of Userbarna: Gusts of Silent Wind">
+        <!-- google fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+        
+
+    <!-- Styles Bootstrap-->
+    <link href="/css/bootstrap-responsive.css" rel="stylesheet" type="text/css">
+    <!--<script src="/css/bootstrap.js"></script>-->
+    <link href="/css/main.css" rel="stylesheet"  type="text/css">
+    <link href="/css/mediaPlayerType.css" rel="stylesheet"  type="text/css">    
+    <script src="/css/jquery.js"></script>
+    <script src="/css/audiojs/audio.js"></script>
+    
+
+        
+        <style>
+          ol { padding: 0px; margin: 0px; list-style: decimal-leading-zero inside; color: #ccc; width: 460px; border-top: 1px solid #ccc; font-size: 0.9em; }
+          ol li { position: relative; margin: 0px; padding: 9px 2px 10px; border-bottom: 1px solid #ccc; cursor: pointer; }
+          ol li a { display: block; text-indent: -3.3ex; padding: 0px 0px 0px 20px; }
+          li.playing { color: #aaa; text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.3); }
+          li.playing a { color: #000; }
+          li.playing:before { content: '♬'; width: 14px; height: 14px; padding: 3px; line-height: 14px; margin: 0px; position: absolute; left: -24px; top: 9px; color: #000; font-size: 13px; text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2); }
+        </style>
+
+<!--<script>
+    var audiojs;
+    audiojs.events.ready(function () {
+        "use strict";
+        var as = audiojs.createAll();
+    });
+</script>-->
+        
+<script>
+    $(function () {
+        // Setup the player to autoplay the next track
+        "use strict";
+        var a = audiojs.createAll({
+                trackEnded: function () {
+                    var next = $('ol li.playing').next();
+                    if (!next.length) {
+                        next = $('ol li').first();
+                    }
+                    next.addClass('playing').siblings().removeClass('playing');
+                    audio.load($('a', next).attr('data-src'));
+                    audio.play();
+                }
+            });
+        
+        // Load in the first track
+        var audio = a[0];
+        var first = $('ol a').attr('data-src');
+        $('ol li').first().addClass('playing');
+        audio.load(first);
+        
+        // Load in a track on click
+        $('ol li').click(function (e) {
+            e.preventDefault();
+            $(this).addClass('playing').siblings().removeClass('playing');
+            audio.load($('a', this).attr('data-src'));
+            audio.play();
+        });
+    });
+    </script>    
+        
+        
+        
+        
+        
+        
+    </head>
+
+    <body>
+        <!--<div class="container">-->
+        {{> content }}
+    <!--<div id="wrapper">
+        <h1>Gusts of Silent Wind</h1>
+        <audio src="/mp3/song.mp3" preload="auto"></audio>
+    </div>-->
+        <!--<h1>Gusts of Silent Wind</h1>
+        <audio preload></audio>
+        <ol>
+            <li><a href="#" data-src="http://s3.amazonaws.com/audiojs/01-dead-wrong-intro.mp3">track 1</a></li>
+            <li><a href="#" data-src="http://s3.amazonaws.com/audiojs/02-juicy-r.mp3">track 2</a></li>
+            <li><a href="#" data-src="http://s3.amazonaws.com/audiojs/03-its-all-about-the-crystalizabeths.mp3">track 3</a></li>
+            <li><a href="#" data-src="/mp3/song1.mp3">track 1</a></li>
+            <li><a href="#" data-src="/mp3/song2.mp3">track 2</a></li>
+            <li><a href="#" data-src="/mp3/song3.mp3">track 3</a></li>
+        </ol>-->    
+        
+        
+        <!--</div>-->
+
+    </body>
+</html>
