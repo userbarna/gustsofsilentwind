@@ -10,6 +10,7 @@ app.configure(function(){
     app.engine('html', require('hbs').__express);
     app.use(express.bodyParser());
     app.use(express.cookieParser());
+    app.use(express.favicon(__dirname + '/app/assets/image/favicon.ico')); 
     app.use(express.static(__dirname + '/app/assets'));
 });
 
