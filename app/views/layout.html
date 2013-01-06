@@ -8,9 +8,11 @@
         <!-- google fonts -->
         <link href='http://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
         
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
 
     <!-- Styles Bootstrap-->
     <link href="/css/bootstrap-responsive.css" rel="stylesheet" type="text/css">
+    <link href="/css/bootstrap.css" rel="stylesheet" type="text/css">    
     <!--<script src="/css/bootstrap.js"></script>-->
     <link href="/css/main.css" rel="stylesheet"  type="text/css">
     <link href="/css/mediaPlayerType.css" rel="stylesheet"  type="text/css">    
@@ -65,11 +67,48 @@
             audio.load($('a', this).attr('data-src'));
             audio.play();
         });
+
+        // Keyboard shortcuts
+        $(document).keydown(function (e) {
+            var unicode = e.charCode ? e.charCode : e.keyCode;
+             // right arrow
+            if (unicode == 39) {
+                var next = $('li.playing').next();
+                if (!next.length) {
+                    next = $('ol li').first();
+                }
+                next.click();
+                // back arrow
+            } else if (unicode == 37) {
+                var prev = $('li.playing').prev();
+                if (!prev.length) {
+                    prev = $('ol li').last();
+                }
+                prev.click();
+                // spacebar
+            } else if (unicode == 32) {
+                audio.playPause();
+            }
+        })
     });
     </script>    
         
         
-        
+ <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37461160-1']);
+  _gaq.push(['_setDomainName', 'gustsofsilentwind.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>       
         
         
         
