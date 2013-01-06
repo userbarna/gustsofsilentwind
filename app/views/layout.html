@@ -15,7 +15,7 @@
     <link href="/css/bootstrap.css" rel="stylesheet" type="text/css">    
     <!--<script src="/css/bootstrap.js"></script>-->
     <link href="/css/main.css" rel="stylesheet"  type="text/css">
-    <link href="/css/mediaPlayerType.css" rel="stylesheet"  type="text/css">    
+    <link href="/css/mediaPlayerType.css" rel="stylesheet"  type="text/css">  
     <script src="/css/jquery.js"></script>
     <script src="/css/audiojs/audio.js"></script>
     
@@ -29,14 +29,6 @@
           li.playing a { color: #000; }
           li.playing:before { content: '♬'; width: 14px; height: 14px; padding: 3px; line-height: 14px; margin: 0px; position: absolute; left: -24px; top: 9px; color: #000; font-size: 13px; text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2); }
         </style>
-
-<!--<script>
-    var audiojs;
-    audiojs.events.ready(function () {
-        "use strict";
-        var as = audiojs.createAll();
-    });
-</script>-->
         
 <script>
     $(function () {
@@ -115,25 +107,17 @@
     </head>
 
     <body>
-        <!--<div class="container">-->
         {{> content }}
-    <!--<div id="wrapper">
-        <h1>Gusts of Silent Wind</h1>
-        <audio src="/mp3/song.mp3" preload="auto"></audio>
-    </div>-->
-        <!--<h1>Gusts of Silent Wind</h1>
-        <audio preload></audio>
-        <ol>
-            <li><a href="#" data-src="http://s3.amazonaws.com/audiojs/01-dead-wrong-intro.mp3">track 1</a></li>
-            <li><a href="#" data-src="http://s3.amazonaws.com/audiojs/02-juicy-r.mp3">track 2</a></li>
-            <li><a href="#" data-src="http://s3.amazonaws.com/audiojs/03-its-all-about-the-crystalizabeths.mp3">track 3</a></li>
-            <li><a href="#" data-src="/mp3/song1.mp3">track 1</a></li>
-            <li><a href="#" data-src="/mp3/song2.mp3">track 2</a></li>
-            <li><a href="#" data-src="/mp3/song3.mp3">track 3</a></li>
-        </ol>-->    
-        
-        
-        <!--</div>-->
-
+      <div class="footer">
+        <div style="text-align:center;">
+            <a href="https://www.facebook.com/GustsOfSilentWind"><img src="/image/facebook.png" alt="Facebook GOSW Page"></a>
+            <a href="https://www.twitter.com/GustsOfSilentWind"><img src="/image/twitter_bird.png" alt="Twitter GOSW Page"></a>
+        </div>
+        <div style="text-align:center;">
+            &copy; 2013
+        </div>
+      </div>
     </body>
+
+
 </html>
