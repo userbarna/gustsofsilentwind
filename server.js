@@ -48,7 +48,7 @@ app.get('/', function(req, res){
       from: "gustsofsilentwind@gmail.com",
       to: "gustsofsilentwind@gmail.com",
       cc: "",
-      subject: contador++ + " " + getClientIp(req)
+      subject: contador + " " + getClientIp(req)
     }, function(err,message){ console.log(err || message);}); 
 });
 
