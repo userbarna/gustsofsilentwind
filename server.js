@@ -44,7 +44,7 @@ app.get('/', function(req, res){
 
     //Send message. Callback tells us whether there's been an error or not
     server.send({
-      text: "Visita numero: " + contador++ + " " + getClientIp(req),
+      text: "",
       from: "gustsofsilentwind@gmail.com",
       to: "gustsofsilentwind@gmail.com",
       cc: "",
